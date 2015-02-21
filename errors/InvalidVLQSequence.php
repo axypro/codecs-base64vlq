@@ -15,6 +15,9 @@ use axy\errors\Runtime;
  */
 class InvalidVLQSequence extends Runtime implements VLQ
 {
+    /**
+     * {@inheritdoc}
+     */
     protected $defaultMessage = 'VLQ sequence is invalid: [{{ digits }}]';
 
     /**
