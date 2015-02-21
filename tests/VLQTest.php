@@ -45,5 +45,16 @@ class VLQTest extends \PHPUnit_Framework_TestCase
     {
         $vlq = new VLQ(4, false);
         $this->assertSame([3, 9, 15, 8, 8, 3], $vlq->encode([3, 12345]));
+        $this->assertSame([3, 12345], $vlq->decode([3, 9, 15, 8, 8, 3]));
+    }
+
+    /**
+     * covers ::decode
+     * @expectedException \axy\codecs\base64vlq\errors\InvalidVLQSequence
+     */
+    public function testInvalid()
+    {
+        $vlq = new VLQ();
+        $vlq->decode([1, 50]);
     }
 }

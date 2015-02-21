@@ -6,6 +6,8 @@
 
 namespace axy\codecs\base64vlq;
 
+use axy\codecs\base64vlq\errors\InvalidVLQSequence;
+
 /**
  * Creating sequence of "VLQ digits" for integers
  *
@@ -71,6 +73,7 @@ class VLQ
      *
      * @param int[] $digits
      * @return int[]
+     * @throws \axy\codecs\base64vlq\errors\InvalidVLQSequence
      */
     public function decode(array $digits)
     {
@@ -88,6 +91,9 @@ class VLQ
             } else {
                 $shift += $bits;
             }
+        }
+        if ($current > 0) {
+            throw new InvalidVLQSequence($digits);
         }
         if ($this->signed) {
             $result = Signed::decodeBlock($result);
