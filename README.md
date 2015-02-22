@@ -99,7 +99,7 @@ $encoder = new Encoder('My Alphabet', 3, false);
 $encoder->encode([12345, 6789]); // phalllApplhhhy
 ```
 
-Custom alphabet can be specified as string (`My Alphabet`) or as array (`[1 => 'A', 10 => 'B', 15 => 'C', 20 => 'D']`).
+Custom alphabet can be specified as a string (`My Alphabet`) or as an array (`[1 => 'A', 10 => 'B', 15 => 'C', 20 => 'D']`).
 
 ## Exceptions
 
