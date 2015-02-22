@@ -6,6 +6,7 @@
  * @author Oleg Grigoriev <go.vasac@gmail.com>
  * @license https://raw.github.com/axypro/codecs-base64vlq/master/LICENSE MIT
  * @link https://github.com/axypro/codecs-base64vlq repository
+ * @link https://github.com/axypro/codecs-base64vlq/blob/master/README.md documentation
  * @uses PHP5.4+
  */
 
