@@ -54,7 +54,6 @@ class VLQ
         $bits = $this->bits;
         $cBit = $this->cBit;
         foreach ($numbers as $number) {
-            $continue = true;
             do {
                 $digit = ($number % $this->cBit);
                 $number >>= $bits;
