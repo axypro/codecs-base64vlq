@@ -1,5 +1,9 @@
 # axy\codecs\base64vlq
 
+[![Latest Stable Version](https://img.shields.io/packagist/v/axy/codecs-base64vlq.svg?style=flat-square)](https://packagist.org/packages/axy/codecs-base64vlq)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.4-8892BF.svg?style=flat-square)](https://php.net/)
+[![Build Status](https://img.shields.io/travis/axypro/codecs-base64vlq/master.svg?style=flat-square)](https://travis-ci.org/axypro/codecs-base64vlq)
+
 Codec for VLQ (variable-length quantity) Base64 algorithm (PHP).
 
 * GitHub: [axypro/codecs-base64vlq](https://github.com/axypro/codecs-base64vlq)

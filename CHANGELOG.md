@@ -1,3 +1,7 @@
+### dev-master
+
+* Travis
+
 ### 1.0.1 (23.11.2015)
 
 * Some refs and tests
