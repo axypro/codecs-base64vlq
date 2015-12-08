@@ -1,6 +1,6 @@
 ### dev-master
 
-* Travis
+* Travis & Coveralls
 
 ### 1.0.1 (23.11.2015)
 

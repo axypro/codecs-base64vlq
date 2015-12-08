@@ -1,21 +1,21 @@
 # axy\codecs\base64vlq
 
+Codec for VLQ (variable-length quantity) Base64 algorithm (PHP).
+
 [![Latest Stable Version](https://img.shields.io/packagist/v/axy/codecs-base64vlq.svg?style=flat-square)](https://packagist.org/packages/axy/codecs-base64vlq)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.4-8892BF.svg?style=flat-square)](https://php.net/)
 [![Build Status](https://img.shields.io/travis/axypro/codecs-base64vlq/master.svg?style=flat-square)](https://travis-ci.org/axypro/codecs-base64vlq)
+[![Coverage Status](https://coveralls.io/repos/axypro/codecs-base64vlq/badge.svg?branch=master&service=github)](https://coveralls.io/github/axypro/codecs-base64vlq?branch=master)
+[![License](https://poser.pugx.org/axy/codecs-base64vlq/license)](LICENSE)
 
-Codec for VLQ (variable-length quantity) Base64 algorithm (PHP).
+* The library does not require any dependencies (except composer packages).
+* Tested on PHP 5.4+, PHP 7, HHVM (on Linux).
+* Install: `composer require axy/codecs-base64vlq`.
+* License: [MIT](LICENSE).
 
-* GitHub: [axypro/codecs-base64vlq](https://github.com/axypro/codecs-base64vlq)
-* Composer: [axypro/codecs-base64vlq](https://packagist.org/packages/axy/codecs-base64vlq)
-* LICENSE: [MIT](LICENSE)
-* Author: Oleg Grigoriev
+### Documentation
 
-PHP 5.4+
-
-Library does not require any dependencies (except composer packages).
-
-## VQL + Base64
+#### VQL + Base64
 
 Base64 allows us to represent a sequence of numbers in a text string 
 that can be stored and transmit in text formats (JSON, XML, etc).
@@ -30,7 +30,7 @@ VLQ+Base64 allows us effectively represented a sequence of integers (dominated b
 
 For example, it used in [JavaScript/CSS source map](https://www.google.ru/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&sqi=2&ved=0CBwQFjAA&url=https%3A%2F%2Fdocs.google.com%2Fdocument%2Fd%2F1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k%2Fedit&ei=abnpVKTZKeaHygPs0oK4BA&usg=AFQjCNFpOFA_dC_8cB50KJ1dXbOH7pvJnA&bvm=bv.86475890,d.bGQ).
 
-## The Algorithm
+#### The Algorithm
 
 For example, we have a block of numbers: `[12345, -12345, 0]`.
 
@@ -61,7 +61,7 @@ The standard alphabet is `A..Za..z0..9+/`.
 
 Result is `yjYzjYA`.
 
-## How to use the library
+#### How to use the library
 
 ```php
 use axy\codecs\base64vlq\Encoder;
@@ -82,7 +82,7 @@ $encoder = Encoder::getStandardInstance();
 
 In this case, the object creation and preliminary calculations are performed only once.
 
-## Custom options
+#### Custom options
 
 The standard encoder uses standard options:
  
@@ -105,7 +105,7 @@ $encoder->encode([12345, 6789]); // phalllApplhhhy
 
 Custom alphabet can be specified as a string (`My Alphabet`) or as an array (`[1 => 'A', 10 => 'B', 15 => 'C', 20 => 'D']`).
 
-## Exceptions
+#### Exceptions
 
 The error classes are located in the namespace `axy\codecs\base64vlq\Encoder\Errors`.
 
@@ -116,7 +116,7 @@ The error classes are located in the namespace `axy\codecs\base64vlq\Encoder\Err
         * InvalidBase64
         * InvalidBase64Input
 
-### InvalidVLQSequence
+##### InvalidVLQSequence
 
 ```php
 $encoder->decode('Az'); // VLQ sequence is invalid: [0,51]
@@ -125,7 +125,7 @@ $encoder->decode('Az'); // VLQ sequence is invalid: [0,51]
 `z` is 51 (the continuation bit = 1).
 The last digit must have 0 in continuation bit.
 
-### InvalidBase64
+##### InvalidBase64
 
 ```php
 $encoder->decode('A*A'); // Base-64 string is invalid: "A*A"
@@ -133,7 +133,7 @@ $encoder->decode('A*A'); // Base-64 string is invalid: "A*A"
 
 `*` are not in the standard Base64 alphabet.
 
-### InvalidBase64Input
+##### InvalidBase64Input
 
 For the standard encoder this exception should not occur.
 
