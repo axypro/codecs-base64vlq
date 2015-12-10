@@ -9,7 +9,7 @@ Codec for VLQ (variable-length quantity) Base64 algorithm (PHP).
 [![License](https://poser.pugx.org/axy/codecs-base64vlq/license)](LICENSE)
 
 * The library does not require any dependencies (except composer packages).
-* Tested on PHP 5.4+, PHP 7, HHVM (on Linux).
+* Tested on PHP 5.4+, PHP 7, HHVM (on Linux), PHP 5.5 (on Windows).
 * Install: `composer require axy/codecs-base64vlq`.
 * License: [MIT](LICENSE).
 
