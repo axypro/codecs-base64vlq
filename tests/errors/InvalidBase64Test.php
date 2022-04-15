@@ -11,7 +11,7 @@ use axy\codecs\base64vlq\errors\InvalidBase64;
 /**
  * coversDefaultClass axy\codecs\base64vlq\errors\InvalidBase64
  */
-class InvalidBase64Test extends \PHPUnit_Framework_TestCase
+class InvalidBase64Test extends \PHPUnit\Framework\TestCase
 {
     public function testCreate()
     {

@@ -11,7 +11,7 @@ use axy\codecs\base64vlq\VLQ;
 /**
  * coversDefaultClass axy\codecs\base64vlq\VLQ
  */
-class VLQTest extends \PHPUnit_Framework_TestCase
+class VLQTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * covers ::encode
@@ -50,10 +50,11 @@ class VLQTest extends \PHPUnit_Framework_TestCase
 
     /**
      * covers ::decode
-     * @expectedException \axy\codecs\base64vlq\errors\InvalidVLQSequence
+     *
      */
     public function testInvalid()
     {
+        $this->expectException(\axy\codecs\base64vlq\errors\InvalidVLQSequence::class);
         $vlq = new VLQ();
         $vlq->decode([1, 50]);
     }

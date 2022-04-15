@@ -18,13 +18,26 @@
         }
     ],
     "require": {
-        "php": ">=5.4.0",
-        "axy/errors": "~1.0.1"
+        "php": ">=7.3",
+        "axy/errors": "^2.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
     },
     "autoload": {
         "psr-4": {
-            "axy\\codecs\\base64vlq\\": ""
+            "axy\\codecs\\base64vlq\\": "src/"
         }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "axy\\codecs\\base64vlq\\tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "phpunit -c phpunit.xml.dist",
+        "md": "phpmd --exclude vendor . text phpmd.xml.dist",
+        "cs": "phpcs --standard=PSR2 --encoding=utf-8 --ignore=vendor ."
     },
     "archive": {
         "exclude": ["/tests/*", "/doc/*", "/cs.sh", "/phpmd.sh", "/*.xml.dist", "/CHANGELOG.md"]

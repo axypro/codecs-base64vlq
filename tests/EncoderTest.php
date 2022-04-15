@@ -11,7 +11,7 @@ use axy\codecs\base64vlq\Encoder;
 /**
  * coversDefaultClass axy\codecs\base64vlq\Encoder
  */
-class EncoderTest extends \PHPUnit_Framework_TestCase
+class EncoderTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * covers ::getStandardInstance
