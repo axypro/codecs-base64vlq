@@ -11,7 +11,7 @@ use axy\codecs\base64vlq\Signed;
 /**
  * coversDefaultClass axy\codecs\base64vlq\Signed
  */
-class SignedTest extends \PHPUnit_Framework_TestCase
+class SignedTest extends \PHPUnit\Framework\TestCase
 {
     /**
      * covers ::encode

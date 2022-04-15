@@ -11,7 +11,7 @@ use axy\codecs\base64vlq\errors\InvalidVLQSequence;
 /**
  * coversDefaultClass axy\codecs\base64vlq\errors\InvalidVLQSequence
  */
-class InvalidVLQSequenceTest extends \PHPUnit_Framework_TestCase
+class InvalidVLQSequenceTest extends \PHPUnit\Framework\TestCase
 {
     public function testCreate()
     {

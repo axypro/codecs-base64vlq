@@ -11,7 +11,7 @@ use axy\codecs\base64vlq\Base64;
 /**
  * coversDefaultClass axy\codecs\base64vlq\Base64
  */
-class Base64Test extends \PHPUnit_Framework_TestCase
+class Base64Test extends \PHPUnit\Framework\TestCase
 {
     /**
      * covers ::encode
@@ -56,10 +56,11 @@ class Base64Test extends \PHPUnit_Framework_TestCase
     /**
      * covers ::encode
      * covers ::decode
-     * @expectedException \axy\codecs\base64vlq\errors\InvalidBase64Input
+     *
      */
     public function testInvalidInput()
     {
+        $this->expectException(\axy\codecs\base64vlq\errors\InvalidBase64Input::class);
         $base64 = new Base64();
         $base64->encode([1, 112, 3]);
     }
@@ -67,10 +68,11 @@ class Base64Test extends \PHPUnit_Framework_TestCase
     /**
      * covers ::encode
      * covers ::decode
-     * @expectedException \axy\codecs\base64vlq\errors\InvalidBase64
+     *
      */
     public function testInvalidBase64()
     {
+        $this->expectException(\axy\codecs\base64vlq\errors\InvalidBase64::class);
         $base64 = new Base64();
         $base64->decode('A*3');
     }
