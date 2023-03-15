@@ -1,8 +1,4 @@
 <?php
-/**
- * @package axy\codecs\base64vlq
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
 
 namespace axy\codecs\base64vlq\tests;
 
@@ -11,7 +7,7 @@ use axy\codecs\base64vlq\Encoder;
 /**
  * coversDefaultClass axy\codecs\base64vlq\Encoder
  */
-class EncoderTest extends \PHPUnit_Framework_TestCase
+class EncoderTest extends BaseTestCase
 {
     /**
      * covers ::getStandardInstance

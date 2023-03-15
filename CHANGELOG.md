@@ -1,6 +1,9 @@
 ### dev-master
 
-* Travis & Coveralls
+* PHP 8.1+
+* Refactoring structure
+* Tests on docker
+* GitHub Actions
 
 ### 1.0.1 (23.11.2015)
 

@@ -1,17 +1,15 @@
 <?php
-/**
- * @package axy\codecs\base64vlq
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
 
 namespace axy\codecs\base64vlq\tests;
 
 use axy\codecs\base64vlq\Base64;
+use axy\codecs\base64vlq\errors\InvalidBase64;
+use axy\codecs\base64vlq\errors\InvalidBase64Input;
 
 /**
  * coversDefaultClass axy\codecs\base64vlq\Base64
  */
-class Base64Test extends \PHPUnit_Framework_TestCase
+class Base64Test extends BaseTestCase
 {
     /**
      * covers ::encode
@@ -56,10 +54,10 @@ class Base64Test extends \PHPUnit_Framework_TestCase
     /**
      * covers ::encode
      * covers ::decode
-     * @expectedException \axy\codecs\base64vlq\errors\InvalidBase64Input
      */
     public function testInvalidInput()
     {
+        $this->expectException(InvalidBase64Input::class);
         $base64 = new Base64();
         $base64->encode([1, 112, 3]);
     }
@@ -67,10 +65,10 @@ class Base64Test extends \PHPUnit_Framework_TestCase
     /**
      * covers ::encode
      * covers ::decode
-     * @expectedException \axy\codecs\base64vlq\errors\InvalidBase64
      */
     public function testInvalidBase64()
     {
+        $this->expectException(InvalidBase64::class);
         $base64 = new Base64();
         $base64->decode('A*3');
     }

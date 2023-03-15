@@ -1,17 +1,14 @@
 <?php
-/**
- * @package axy\codecs\base64vlq
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
 
 namespace axy\codecs\base64vlq\tests;
 
+use axy\codecs\base64vlq\errors\InvalidVLQSequence;
 use axy\codecs\base64vlq\VLQ;
 
 /**
  * coversDefaultClass axy\codecs\base64vlq\VLQ
  */
-class VLQTest extends \PHPUnit_Framework_TestCase
+class VLQTest extends BaseTestCase
 {
     /**
      * covers ::encode
@@ -50,10 +47,10 @@ class VLQTest extends \PHPUnit_Framework_TestCase
 
     /**
      * covers ::decode
-     * @expectedException \axy\codecs\base64vlq\errors\InvalidVLQSequence
      */
     public function testInvalid()
     {
+        $this->expectException(InvalidVLQSequence::class);
         $vlq = new VLQ();
         $vlq->decode([1, 50]);
     }

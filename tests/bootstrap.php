@@ -1,9 +1,7 @@
 <?php
-/**
- * @package axy\codecs\base64vlq
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
 
-namespace axy\codecs\base64vlq\tests;
+declare(strict_types=1);
 
-require(__DIR__.'/../index.php');
+namespace axy\codecs\base64vlq;
+
+require_once __DIR__ . '/../index.php';

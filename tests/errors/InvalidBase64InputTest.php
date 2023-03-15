@@ -1,17 +1,14 @@
 <?php
-/**
- * @package axy\codecs\base64vlq
- * @author Oleg Grigoriev <go.vasac@gmail.com>
- */
 
 namespace axy\codecs\base64vlq\tests\errors;
 
 use axy\codecs\base64vlq\errors\InvalidBase64Input;
+use axy\codecs\base64vlq\tests\BaseTestCase;
 
 /**
  * coversDefaultClass axy\codecs\base64vlq\errors\InvalidBase64Input
  */
-class InvalidBase64InputTest extends \PHPUnit_Framework_TestCase
+class InvalidBase64InputTest extends BaseTestCase
 {
     public function testCreate()
     {

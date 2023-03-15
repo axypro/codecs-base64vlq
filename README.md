@@ -3,21 +3,16 @@
 Codec for VLQ (variable-length quantity) Base64 algorithm (PHP).
 
 [![Latest Stable Version](https://img.shields.io/packagist/v/axy/codecs-base64vlq.svg?style=flat-square)](https://packagist.org/packages/axy/codecs-base64vlq)
-[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.4-8892BF.svg?style=flat-square)](https://php.net/)
-[![Build Status](https://img.shields.io/travis/axypro/codecs-base64vlq/master.svg?style=flat-square)](https://travis-ci.org/axypro/codecs-base64vlq)
-[![Coverage Status](https://coveralls.io/repos/axypro/codecs-base64vlq/badge.svg?branch=master&service=github)](https://coveralls.io/github/axypro/codecs-base64vlq?branch=master)
+[![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%208.1-8892BF.svg?style=flat-square)](https://php.net/)
+[![Tests](https://github.com/axypro/codecs-base64vlq/actions/workflows/test.yml/badge.svg)](https://github.com/axypro/codecs-base64vlq/actions/workflows/test.yml)
+[![Coverage Status](https://coveralls.io/repos/github/axypro/codecs-base64vlq/badge.svg?branch=master)](https://coveralls.io/github/axypro/codecs-base64vlq?branch=master)
 [![License](https://poser.pugx.org/axy/codecs-base64vlq/license)](LICENSE)
-
-* The library does not require any dependencies (except composer packages).
-* Tested on PHP 5.4+, PHP 7, HHVM (on Linux), PHP 5.5 (on Windows).
-* Install: `composer require axy/codecs-base64vlq`.
-* License: [MIT](LICENSE).
 
 ### Documentation
 
 #### VQL + Base64
 
-Base64 allows us to represent a sequence of numbers in a text string 
+Base64 allows us to represent a sequence of numbers in a text string
 that can be stored and transmit in text formats (JSON, XML, etc).
 
 VLQ allows us to represent an integer in a sequence numbers with little digit capacity.
@@ -41,7 +36,7 @@ Transfer the sign bit to the end of the integer.
 Added `0` (positive) to the end: `110000001110010`.
 
 For `-12345` take a positive form and add `1` (negative) to the end: `110000001110011`.
- 
+
 Result is `[110000001110010, 110000001110011, 0]`.
 
 (2). Transform to the VLQ-sequence.
@@ -50,9 +45,9 @@ Most significant bit is reserved - it is "continuation".
 
 Split numbers to groups of 5 bits: `[11000 00011 10010, 11000 00011 10011, 00000]`.
 Output starting from the least significant bits.
-If the group is not the last in the current number then set the continuation bit. 
+If the group is not the last in the current number then set the continuation bit.
 
-Result: `[110010 100011 011000 110011 100011 011000 000000]`. 
+Result: `[110010 100011 011000 110011 100011 011000 000000]`.
 Or decimal `[50, 35, 24, 51, 35, 24, 0]`.
 These are VLQ digits.
 
@@ -85,7 +80,7 @@ In this case, the object creation and preliminary calculations are performed onl
 #### Custom options
 
 The standard encoder uses standard options:
- 
+
 1. Transfer the sign bit.
 2. 6-bit VLQ digits.
 3. Standard alphabet: `A..Za..z0..9+/`.

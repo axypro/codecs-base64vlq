@@ -1,10 +1,9 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
+# Checks code style.
+# Arguments and options are equal to phpcs.
+# Without arguments checks /src/ and /tests/ directories.
+# Host script that executes internal script (inside docker container)
 
-cmd="/usr/bin/env phpcs --standard=PSR2 --encoding=utf-8 --ignore=vendor"
+. "$(dirname "$0")/docker/scripts/boot_host.sh"
 
-if [ "$#" -ne 0 ]; then
-$cmd "$@"
-else 
-$cmd .
-fi
-
+docker-compose run -T --rm php /bin/sh /app/docker/scripts/cs.sh "$@"
