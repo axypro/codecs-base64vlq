@@ -1,4 +1,4 @@
-### dev-master
+### 2.0.0 (15.03.2023)
 
 * PHP 8.1+
 * Refactoring structure
