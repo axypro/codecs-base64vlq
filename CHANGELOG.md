@@ -1,3 +1,7 @@
+### dev-master
+
+* Up axy/errors for fix deprecations
+
 ### 2.0.0 (15.03.2023)
 
 * PHP 8.1+
