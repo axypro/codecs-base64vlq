@@ -1,6 +1,7 @@
 ### dev-master
 
 * Up axy/errors for fix deprecations
+* Dev: docker tmpfs for composer cache and tmp test directory
 
 ### 2.0.0 (15.03.2023)
 
